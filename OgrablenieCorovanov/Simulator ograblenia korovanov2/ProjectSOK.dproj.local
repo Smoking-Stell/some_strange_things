@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.596,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.138,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.813,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UKorovan.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.068,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.727,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGrabitel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.794,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.907,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.212,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.511,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.580,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\UKyst.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.068,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMain.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.016,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\Killer.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.339,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\kust.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.135,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Korovan.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.416,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame2.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.916,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.950,=C:\Users\1\Desktop\Школа\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.916,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.479,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.511,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.871,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.690,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.236,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.496,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.901,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\Pustinya.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.998,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\ProjectSOK.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.476,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\UGame2.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,C:\Users\1\Desktop\Школа\Акулов\Simulator ograblenia korovanov\UUbica.pas=C:\Users\1\Desktop\Школа\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.664,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.270,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.760,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.233,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.627,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\UUbica.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.416,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame2.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.760,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.270,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.196,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.871,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.224,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\BanditRDR.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.680,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov1\Pole.png</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.658,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\i (3).png</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="d946d2f7"/>
+	</ActiveMobileDevice>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="android-support-v4.dex.jar"/>
+    <File Path="cloud-messaging.dex.jar"/>
+    <File Path="fmx.dex.jar"/>
+    <File Path="google-analytics-v2.dex.jar"/>
+    <File Path="google-play-billing.dex.jar"/>
+    <File Path="google-play-licensing.dex.jar"/>
+    <File Path="google-play-services.dex.jar"/>
+    <File Path="UGrabitel.pas"/>
+    <File Path="UKorovan.pas"/>
+    <File Path="UMain.pas"/>
+    <File Path="UMain.fmx"/>
+    <File Path="UMenu.pas"/>
+    <File Path="UMenu.fmx"/>
+    <File Path="UGame.pas"/>
+    <File Path="UGame.fmx"/>
+    <File Path="BanditRDR.png"/>
+    <File Path="i (3).png"/>
+    <File Path="Korovan.png"/>
+    <File Path="Pole.png"/>
+    <File Path="Killer.png"/>
+    <File Path="kust.png"/>
+    <File Path="UKyst.pas"/>
+    <File Path="Pustinya.png"/>
+  </ProjectSortOrder>
+</BorlandProject>

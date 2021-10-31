@@ -1,0 +1,23 @@
+object FrGame: TFrGame
+  Size.Width = 598.000000000000000000
+  Size.Height = 496.000000000000000000
+  Size.PlatformDefault = False
+  object Text1: TText
+    Align = Top
+    Size.Width = 598.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    object SpeedButton1: TSpeedButton
+      Align = Right
+      Position.X = 518.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'SpeedButton1'
+    end
+  end
+  object TimMain: TTimer
+    Left = 568
+    Top = 72
+  end
+end

@@ -1,0 +1,17 @@
+object FrGame: TFrGame
+  Size.Width = 684.000000000000000000
+  Size.Height = 592.000000000000000000
+  Size.PlatformDefault = False
+  object PBox: TPaintBox
+    Align = Contents
+    Size.Width = 684.000000000000000000
+    Size.Height = 592.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseDown = PBoxMouseDown
+  end
+  object Main: TTimer
+    Interval = 50
+    OnTimer = MainTimer
+    Left = 656
+  end
+end

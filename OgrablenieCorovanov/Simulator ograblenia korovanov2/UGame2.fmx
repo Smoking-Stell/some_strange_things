@@ -1,0 +1,28 @@
+object FrGame2: TFrGame2
+  Size.Width = 320.000000000000000000
+  Size.Height = 240.000000000000000000
+  Size.PlatformDefault = False
+  object PBox: TPaintBox
+    Align = Contents
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseDown = PBoxMouseDown
+    OnPaint = PBoxPaint
+    object Text1: TText
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TextSettings.HorzAlign = Leading
+    end
+  end
+  object TimMain: TTimer
+    Interval = 20
+    OnTimer = TimMainTimer
+    Left = 292
+    Top = 88
+  end
+end

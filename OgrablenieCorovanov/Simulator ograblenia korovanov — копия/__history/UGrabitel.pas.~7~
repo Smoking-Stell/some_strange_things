@@ -1,0 +1,30 @@
+unit UGrabitel;
+
+interface
+
+uses System.UITypes, System.Types, System.Generics.Collections;
+
+type
+  TGr = class
+    Pos: Integer;
+    Damage: Integer;
+    LSD: Integer;
+    constructor Create (APos, ADamage, ALSD: Integer);
+  end;
+
+  TGrs = class
+
+  end;
+
+implementation
+
+{ TGr }
+
+constructor TGr.Create(APos, ADamage, ALSD: Integer);
+begin
+  Pos := APos;
+  Damage := ADamage;
+  LSD := ALSD;
+end;
+
+end.

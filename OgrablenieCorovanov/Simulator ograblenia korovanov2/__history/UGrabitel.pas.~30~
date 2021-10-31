@@ -1,0 +1,66 @@
+unit UGrabitel;
+
+interface
+
+uses System.UITypes, System.Types, System.Generics.Collections;
+
+type
+  TGr = class
+    Road: Integer;
+    Pos: Integer;
+    Damage: Integer;
+    LSD: Integer;
+    Interval : Integer;
+    function SetDamage (ALSD, ADamage: Integer): Integer;
+    constructor Create (APos, ADamage, ALSD, ARoad: Integer);
+  end;
+
+  TGrs = class   (TObjectList<TGr>)
+    procedure NewGr (APos, ADamage, ALSD, ARoad: Integer);
+    constructor MyCreate;
+  end;
+
+  Const
+    LSD1 = 100;
+    Damage1 = 1;
+
+implementation
+
+{ TGr }
+
+constructor TGr.Create(APos, ADamage, ALSD, Aroad: Integer);
+begin
+  Pos := APos;
+  Damage := Damage1;
+  LSD := LSD1;
+  Road := ARoad;
+  Interval := 0;
+end;
+
+function TGr.SetDamage(ALSD, ADamage: Integer): Integer;
+begin
+  Result :=0;
+  if (Interval * ALSD = 100) then
+    begin
+      Result := ADamage;
+      Interval := 0;
+    end
+  else
+    Interval := Interval + 1;
+
+end;
+
+{ TGrs }
+
+
+constructor TGrs.MyCreate;
+begin
+  Create();
+end;
+
+procedure TGrs.NewGr(APos, ARoad: Integer);
+begin
+  Add(TGr.Create(APos, ADamage, ALSD,ARoad));
+end;
+
+end.

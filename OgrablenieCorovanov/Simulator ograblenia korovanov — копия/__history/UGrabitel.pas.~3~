@@ -1,0 +1,12 @@
+unit UGrabitel;
+
+interface
+
+uses System.UITypes, System.Types, System.Generics.Collections;
+
+type
+  T
+
+implementation
+
+end.

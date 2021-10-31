@@ -1,0 +1,306 @@
+unit UGame;
+
+interface
+
+uses
+  Ugrabitel, UKorovan, FMX.Forms, System.UITypes, FMX.Graphics, System.Types,
+  FMX.Controls.Presentation, FMX.Objects, FMX.Types, FMX.Controls, FMX.StdCtrls,
+  System.Classes, FMX.Dialogs, System.SysUtils;
+
+type
+  TFrGame = class(TFrame)
+    TimMain: TTimer;
+    Text1: TText;
+    SBPause: TSpeedButton;
+    PBox: TPaintBox;
+    SBPlay: TSpeedButton;
+    SBBack: TSpeedButton;
+    procedure PBoxMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure TimMainTimer(Sender: TObject);
+    procedure PBoxPaint(Sender: TObject; Canvas: TCanvas);
+    procedure SBBackClick(Sender: TObject);
+    procedure SBPauseClick(Sender: TObject);
+    procedure SBPlayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Korovans: TKorovans;
+    Grs: TGrs;
+    Wave: Integer;
+    Yobi: Integer;
+    ToWave: Integer;
+    HP: Integer;
+    Poligon: Integer;
+    Price: Integer;
+    Constructor Create(AOwner: TComponent); override;
+    Destructor Destroy; override;
+    Procedure NewWawe;
+  end;
+
+implementation
+
+uses UMain, UMenu;
+
+{$R *.fmx}
+
+procedure TFrGame.SBBackClick(Sender: TObject);
+begin
+  SetFrame (TFrMenu);
+end;
+
+
+procedure TFrGame.TimMainTimer(Sender: TObject);
+  var LKorovan: TKorovan;
+      LGr: TGr;
+begin
+
+  PBox.Repaint;
+
+  if Assigned(Korovans) then
+  begin
+    Korovans.NewKorovan(Wave);
+    for LKorovan in Korovans do
+    begin
+      LKorovan.Move;
+      if LKorovan.CheckOut (RectF (0,0,PBox.Width,PBox.Height)) then
+        begin
+          Korovans.Delete (Korovans.IndexOf (LKorovan));
+          HP := HP - 1;
+          if (HP <= 0) then
+            begin
+              ShowMessage ('You are lose!');
+              TimMain.Enabled := False;
+            end;
+          Continue;
+        end;
+      for LGr in Grs do
+        begin
+          if (LKorovan.Road = LGr.Road) and
+             (LKorovan.Pos  <= LGr.Pos) and
+             (LKorovan.Pos + LKorovan.Length >=  LGr.Pos) then
+             begin
+                LKorovan.Health := LKorovan.Health - LGr.SetDamage(LSD1, Damage1);
+               if (LKorovan.CheckDie(LGr.SetDamage(LSD1, Damage1))) then
+                  begin
+                    Yobi := Yobi + LKorovan.Weight;
+                    Korovans.Delete (Korovans.IndexOf (LKorovan));
+                    ToWave := ToWave + 1;
+                  end;
+             end;
+        end;
+    end;
+  end;
+
+  if Poligon > 0 then dec(Poligon);
+
+  if ToWave div (20 + Wave) > Wave then NewWawe;
+
+  if Wave >= 16 then
+    begin
+      ShowMessage ('You are lose!');
+      TimMain.Enabled := False;
+    end;
+
+end;
+
+constructor TFrGame.Create(AOwner: TComponent);
+begin
+  inherited;
+
+  if not Assigned(Grs) then
+    Grs := TGrs.Create;
+  ToWave := 0;
+  Wave := 0;
+
+  Yobi := 70;
+  HP := 10;
+  Price := 25;
+  NewWawe;
+end;
+
+destructor TFrGame.Destroy;
+begin
+  if Assigned(Korovans) then
+    begin
+      Korovans.Free;
+      Korovans := nil;
+    end;
+  if Assigned(Grs) then
+    begin
+      Grs.Free;
+      Grs := nil;
+    end;
+  inherited;
+end;
+
+procedure TFrGame.NewWawe;
+begin
+  if not Assigned(Korovans) then
+    Korovans := TKorovans.Create;
+  Korovans.Clear;
+  Inc(Wave);
+  Price := Price + 5;
+  Poligon := 100;
+  TimMain.Enabled := False;
+end;
+
+procedure TFrGame.SBPauseClick(Sender: TObject);
+begin
+  TimMain.Enabled := False;
+end;
+
+procedure TFrGame.PBoxMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+  var line: Integer;
+      fl: Boolean;
+      LGr: TGr;
+begin
+  fl := false;
+  if (Yobi-Price >=0) then
+    begin
+      if Assigned(Grs) then
+        begin
+          if ((Y<=150) and (Y>=100)) then
+            begin
+              line := 1;
+              fl := true;
+            end;
+          if ((Y<=250) and (Y>=200)) then
+            begin
+              line := 2;
+              fl := true;
+            end;
+          if ((Y<=350) and (Y>=300)) then
+            begin
+              line := 3;
+              fl := true;
+            end;
+          if ((Y<=450) and (Y>=400)) then
+            begin
+              line := 4;
+              fl := true;
+            end;
+        end;
+      if Assigned(Grs) and fl = true then
+        for LGr in Grs do
+            if (LGr.Pos >= Round(X)-20) and (LGr.Pos <= Round(X) + 40)
+            and (LGr.Road = line)  then
+              begin
+                fl := false;
+              end;
+      if fl = true then
+        begin
+          Grs.NewGr(round(X), line);
+          Yobi := Yobi- Price;
+        end
+    end;
+end;
+
+
+procedure TFrGame.PBoxPaint(Sender: TObject; Canvas: TCanvas);
+  var
+    LKorovan:TKorovan;
+    LGr: TGr;
+    LStream: TResourceStream;
+    LBitmap: TBitmap;
+    LRectSource, LRectDest: TRectF;
+    LKol: Single;
+    LKolit, i: Integer;
+begin
+
+
+    Canvas.Fill.Kind := TBrushKind.Solid;
+    Canvas.Font.Family := 'Arial';
+    Canvas.Font.Size := 20;
+    Canvas.Font.Style := [TFontStyle.fsBold];
+    Canvas.BeginScene();
+
+
+    Canvas.Stroke.Kind := TBrushKind.Solid;
+    Canvas.Stroke.Color := TAlphaColors.Black;
+    Canvas.Stroke.Thickness :=5;
+    Canvas.DrawRect (RectF(0, 100, PBox.Width, 150),  0, 0, [], 1);
+    Canvas.DrawRect (RectF(0, 200, PBox.Width, 250),  0, 0, [], 1);
+    Canvas.DrawRect (RectF(0, 300, PBox.Width, 350),  0, 0, [], 1);
+    Canvas.DrawRect (RectF(0, 400, PBox.Width, 450),  0, 0, [], 1);
+
+
+    LStream := TResourceStream.Create(HInstance,'Doroga', RT_RCDATA);
+    LBitmap := TBitmap.Create;
+    LBitmap.LoadFromStream(LStream);
+    LRectSource := LBitmap.BoundsF;
+    LStream.Free;
+    LKol := PBox.Width / 50;
+    LKolit := trunc (LKol) +1;
+    for i:=1 to LKolit do
+      begin
+        LRectDest := RectF(i * 50 - 50, 100, i * 50, 150);
+        Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+        LRectDest := RectF(i * 50 - 50, 200, i * 50, 250);
+        Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+        LRectDest := RectF(i * 50 - 50, 300, i * 50, 350);
+        Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+        LRectDest := RectF(i * 50 - 50, 400, i * 50, 450);
+        Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+      end;
+    LBitmap.Free;
+
+    Canvas.Fill.Color := TAlphaColors.Black;
+    Canvas.FillText(RectF(20, 30, 120, 50),'Wave: ' + Wave.ToString,
+    False, 1, [], TTextAlign.Trailing);
+    Canvas.FillText(RectF(170, 30, 270,50),'Yobi: ' + Yobi.ToString,
+    False, 1, [], TTextAlign.Center);
+    Canvas.FillText(RectF(320, 30, 570,50),'Your Hp: ' + HP.ToString,
+    False, 1, [], TTextAlign.Center);
+
+
+     LStream := TResourceStream.Create(HInstance,'Korovan', RT_RCDATA);
+     LBitmap := TBitmap.Create;
+     LBitmap.LoadFromStream(LStream);
+     LRectSource := LBitmap.BoundsF;
+     LStream.Free;
+     if Assigned(Korovans) then
+     for LKorovan in Korovans do
+        begin
+          LRectDest := RectF(LKorovan.Pos - 20, LKorovan.Road * 100  - 10,
+            LKorovan.Pos + LKorovan.Length, LKorovan.Road * 100 + 50);
+          Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+        end;
+     LBitmap.Free;
+
+     LStream := TResourceStream.Create(HInstance,'Bandit', RT_RCDATA);
+     LBitmap := TBitmap.Create;
+     LBitmap.LoadFromStream(LStream);
+     LRectSource := LBitmap.BoundsF;
+     LStream.Free;
+     if Assigned(Grs) then
+     for LGr in Grs do
+        begin
+          LRectDest := RectF(LGr.Pos-10, LGr.Road*100 - 30, LGr.Pos + 20,
+                              LGr.Road * 100 + 10);
+          Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+        end;
+     LBitmap.Free;
+
+    Canvas.Fill.Color := TAlphaColors.Black;
+    if Poligon > 0 then
+      begin
+        Canvas.Font.Family := 'Arial';
+        Canvas.Font.Size := 50;
+        Canvas.Font.Style := [TFontStyle.fsBold];
+        Canvas.FillText(RectF(0, 0, PBox.Width,PBox.Height),'New Wave: ' + Wave.ToString
+                                          + LineFeed + 'Price for Gr: ' + Price.ToString,
+        False, 1, [], TTextAlign.Center);
+      end;
+
+    Canvas.EndScene;
+end;
+
+procedure TFrGame.SBPlayClick(Sender: TObject);
+begin
+  TimMain.Enabled := True;
+end;
+
+end.

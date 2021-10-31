@@ -1,0 +1,54 @@
+object FrMenu: TFrMenu
+  Size.Width = 493.000000000000000000
+  Size.Height = 481.000000000000000000
+  Size.PlatformDefault = False
+  object PaintBox1: TPaintBox
+    Align = Contents
+    Size.Width = 493.000000000000000000
+    Size.Height = 481.000000000000000000
+    Size.PlatformDefault = False
+    object Play: TButton
+      Align = Top
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 30.000000000000000000
+      Margins.Top = 90.000000000000000000
+      Margins.Right = 30.000000000000000000
+      Position.X = 30.000000000000000000
+      Position.Y = 155.000000000000000000
+      Size.Width = 433.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Play'
+      TextSettings.Font.Size = 40.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      OnClick = PlayClick
+    end
+    object Exit: TButton
+      Align = Top
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 30.000000000000000000
+      Margins.Top = 60.000000000000000000
+      Margins.Right = 30.000000000000000000
+      Position.X = 30.000000000000000000
+      Position.Y = 264.000000000000000000
+      Size.Width = 433.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Big Red Button'
+      TextSettings.Font.Size = 40.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      OnClick = ExitClick
+    end
+    object Text1: TText
+      Align = Top
+      Size.Width = 493.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      Text = #1057#1080#1084#1091#1083#1103#1090#1086#1088' '#1059#1082#1088#1072#1080#1085#1099
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+    end
+  end
+end

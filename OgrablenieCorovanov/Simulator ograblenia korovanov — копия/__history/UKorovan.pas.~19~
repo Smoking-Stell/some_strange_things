@@ -1,0 +1,63 @@
+unit UKorovan;
+
+interface
+
+  uses System.UITypes, System.Types, System.Generics.Collections;
+
+  type
+
+    TKorovan = class
+      Health: Integer;
+      Weight: Integer;
+      Speed: Integer;
+      Road: Integer;
+      Pos: Integer;
+      Constructor Create (ARoad, AWave: Integer);
+      Procedure Move;
+      Procedure SetRoad;
+    end;
+    
+    TKorovans = class (TObjectList<TKorovan>)
+       procedure NewKorovam (ARoad, AInterval, LWave: Integer);
+    end;
+    const
+      TBD = 100;
+implementation
+
+{ TKorovan }
+
+constructor TKorovan.Create(ARoad, AWave: Integer);
+begin
+  Health := AWave;
+  Speed := AWave + 5;
+  Weight := AWave + 4;
+end;
+
+procedure TKorovan.Move;
+begin
+  Pos := Pos + Speed;
+end;
+
+
+procedure TKorovan.SetRoad;
+begin
+  Road := Random(4)+ 1;
+end;
+
+{ TKorovans }
+
+procedure TKorovans.NewKorovam(ARoad, AInterval, LWave: Integer);
+  var CountStep: Integer;
+begin
+   CountStep := TBD * AInterval;
+   if CountStep >= 1000 then
+    begin
+      Add(TKorovan.Create(LWave));
+      AInterval := 0;
+    end;
+   else
+    inc(AInterval);
+
+end;
+
+end.

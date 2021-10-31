@@ -1,0 +1,25 @@
+unit UKyst;
+
+interface
+  uses System.UITypes, System.Types, System.Generics.Collections;
+
+  type
+
+    TKyst = class
+      Pos: Integer;
+      PosK: Integer;
+    end;
+
+    TKysts = class (TObjectList<TKyst>)
+      procedure NewKyst(APos: Integer);
+    end;
+implementation
+
+{ TKysts }
+
+procedure TKysts.NewKyst(APos: Integer);
+begin
+  Add(TKyst.Create(aPos));
+end;
+
+end.

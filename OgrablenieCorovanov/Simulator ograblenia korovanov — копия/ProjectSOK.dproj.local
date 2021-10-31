@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.212,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.813,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UKorovan.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.068,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMain.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\ProjectSOK.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.727,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGrabitel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.068,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.138,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 10:29:13.236,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 10:30:02.664,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 10:30:37.760,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 10:30:37.760,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx</Transaction>
+    <Transaction>2017.07.03 10:40:28.233,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.pas</Transaction>
+    <Transaction>2017.07.03 10:43:05.794,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit3.pas</Transaction>
+    <Transaction>2017.07.03 10:52:10.507,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit3.pas</Transaction>
+    <Transaction>2017.07.03 10:53:06.916,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.pas</Transaction>
+    <Transaction>2017.07.03 10:53:06.916,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit2.fmx</Transaction>
+    <Transaction>2017.07.03 10:53:34.511,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.fmx</Transaction>
+    <Transaction>2017.07.03 10:53:34.511,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGame.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UGzme.pas</Transaction>
+    <Transaction>2017.07.03 10:55:25.196,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=</Transaction>
+    <Transaction>2017.07.03 10:55:35.998,=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 11:00:41.871,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.pas=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.pas</Transaction>
+    <Transaction>2017.07.03 11:00:41.871,E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\UMenu.fmx=E:\СовТех\СовТех17\Акулов\Simulator ograblenia korovanov\Unit1.fmx</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="android-support-v4.dex.jar"/>
+    <File Path="cloud-messaging.dex.jar"/>
+    <File Path="fmx.dex.jar"/>
+    <File Path="google-analytics-v2.dex.jar"/>
+    <File Path="google-play-billing.dex.jar"/>
+    <File Path="google-play-licensing.dex.jar"/>
+    <File Path="google-play-services.dex.jar"/>
+    <File Path="UGame.pas"/>
+    <File Path="UGame.fmx"/>
+    <File Path="UGrabitel.pas"/>
+    <File Path="UKorovan.pas"/>
+    <File Path="UMain.pas"/>
+    <File Path="UMain.fmx"/>
+    <File Path="UMenu.pas"/>
+    <File Path="UMenu.fmx"/>
+  </ProjectSortOrder>
+</BorlandProject>

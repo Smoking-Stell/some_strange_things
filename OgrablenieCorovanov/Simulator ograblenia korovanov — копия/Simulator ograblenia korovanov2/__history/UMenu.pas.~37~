@@ -1,0 +1,41 @@
+unit UMenu;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, UMain, FMX.Objects;
+
+type
+  TFrMenu = class(TFrame)
+    Text1: TText;
+    Play: TRoundRect;
+    Exit: TCircle;
+    Text2: TText;
+    Text3: TText;
+    procedure ExitClick(Sender: TObject);
+    procedure PlayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+uses UGame,UGame2;
+
+{$R *.fmx}
+
+procedure TFrMenu.ExitClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TFrMenu.PlayClick(Sender: TObject);
+begin
+ SetFrame (TFrGame);
+ //SetFrame (TFrGame2);
+end;
+
+end.

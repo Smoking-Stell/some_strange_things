@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.665,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\СовТех17\Мас\MyProject\ProjectGame.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.970,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\СовТех17\Мас\MyProject\UMain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.212,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\СовТех17\Мас\MyProject\UGod.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.075,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.430,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.970,C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\СовТех17\Мас\MyProject\UMain.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.983,=C:\Users\СовТех17\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017.07.01 08:26:31.254,=C:\СовТех17\Мас\MyProject\Unit1.pas</Transaction>
+    <Transaction>2017.07.01 08:27:01.577,C:\СовТех17\Мас\MyProject\UMyHuman.pas=C:\СовТех17\Мас\MyProject\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="H6E6R14412000692"/>
+	</ActiveMobileDevice>
+</BorlandProject>

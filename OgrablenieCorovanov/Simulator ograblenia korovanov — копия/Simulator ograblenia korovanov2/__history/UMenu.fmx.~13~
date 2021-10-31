@@ -1,0 +1,45 @@
+object FrMenu: TFrMenu
+  Size.Width = 493.000000000000000000
+  Size.Height = 481.000000000000000000
+  Size.PlatformDefault = False
+  object PaintBox1: TPaintBox
+    Align = Contents
+    Size.Width = 493.000000000000000000
+    Size.Height = 481.000000000000000000
+    Size.PlatformDefault = False
+    object Text1: TText
+      Align = Top
+      Size.Width = 493.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      Text = #1057#1080#1084#1091#1083#1103#1090#1086#1088' '#1059#1082#1088#1072#1080#1085#1099
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+    end
+    object Play: TRoundRect
+      Align = Top
+      Fill.Color = xFFF9F11B
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 60.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 125.000000000000000000
+      Size.Width = 453.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = PlayClick
+      OnPaint = PlayPaint
+    end
+    object Exit: TCircle
+      Align = Top
+      Fill.Color = xFFFD1919
+      Margins.Top = 20.000000000000000000
+      Position.Y = 195.000000000000000000
+      Size.Width = 493.000000000000000000
+      Size.Height = 257.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = ExitClick
+      OnPaint = ExitPaint
+    end
+  end
+end

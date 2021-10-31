@@ -1,0 +1,16 @@
+unit UGrabitel;
+
+interface
+
+uses System.UITypes, System.Types, System.Generics.Collections;
+
+type
+  TGr = class
+    Pos: Integer;
+    Damage: Integer;
+
+  end;
+
+implementation
+
+end.

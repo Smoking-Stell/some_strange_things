@@ -1,0 +1,35 @@
+object Frame1: TFrame1
+  Size.Width = 548.000000000000000000
+  Size.Height = 432.000000000000000000
+  Size.PlatformDefault = False
+  object Play: TButton
+    Align = Top
+    Cursor = crHandPoint
+    Margins.Left = 30.000000000000000000
+    Margins.Top = 60.000000000000000000
+    Margins.Right = 30.000000000000000000
+    Position.X = 30.000000000000000000
+    Position.Y = 60.000000000000000000
+    Size.Width = 488.000000000000000000
+    Size.Height = 45.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Play'
+    OnClick = PlayClick
+  end
+  object Exit: TButton
+    Align = Top
+    Cursor = crHourGlass
+    Margins.Left = 30.000000000000000000
+    Margins.Top = 60.000000000000000000
+    Margins.Right = 30.000000000000000000
+    Position.X = 30.000000000000000000
+    Position.Y = 165.000000000000000000
+    Size.Width = 488.000000000000000000
+    Size.Height = 45.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Big Red Button'
+    OnClick = ExitClick
+  end
+end

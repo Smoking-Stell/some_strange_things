@@ -1,0 +1,129 @@
+unit UGame;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  UKorovan, UGrabitel, UMain, UMenu, FMX.Objects, FMX.Controls.Presentation;
+
+type
+  TFrGame = class(TFrame)
+    TimMain: TTimer;
+    PBox: TPaintBox;
+    Text1: TText;
+    Back: TSpeedButton;
+    Pause: TSpeedButton;
+    procedure PaintBox1Click(Sender: TObject);
+    procedure PBoxMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure TimMainTimer(Sender: TObject);
+    procedure PBoxPaint(Sender: TObject; Canvas: TCanvas);
+    procedure BackClick(Sender: TObject);
+    procedure PauseClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    Korovans: TKorovans;
+    Grs: TGrs;
+    Wave: Integer;
+    Yobi: Integer;
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.fmx}
+
+procedure TFrGame.BackClick(Sender: TObject);
+begin
+  SetFrame (TFrMenu);
+end;
+
+procedure TFrGame.TimMainTimer(Sender: TObject);
+  var LKorovan: TKorovan;
+      LGr: TGr;
+begin
+  PBox.Repaint;
+  if Assigned(Korovans) then
+  begin
+    Korovans.NewKorovan(Wave);
+    for LKorovan in Korovans do
+    begin
+      LKorovan.Move;
+      for LGr in Grs do
+      begin
+        if (LKorovan.Road = LGr.Road) and ()then
+
+      end;
+    end;
+
+  end;
+end;
+
+procedure TFrGame.PaintBox1Click(Sender: TObject);
+begin
+  //
+end;
+
+procedure TFrGame.PauseClick(Sender: TObject);
+begin
+  TimMain.Enabled := not TimMain.Enabled;
+end;
+
+procedure TFrGame.PBoxMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+//
+end;
+
+
+procedure TFrGame.PBoxPaint(Sender: TObject; Canvas: TCanvas);
+begin
+  Canvas.Fill.Kind := TBrushKind.Solid;
+    Canvas.Font.Family := 'Arial';
+    Canvas.Font.Size := 20;
+    Canvas.Font.Style := [TFontStyle.fsBold];
+    Canvas.BeginScene();
+     Canvas.Fill.Color := TAlphaColors.Red;
+     Canvas.Fill.Kind := TBRushKind.Solid;
+     Canvas.Stroke.Kind := TBrushKind.Solid;
+     Canvas.Stroke.Color := TAlphaColors.Green;
+     Canvas.Stroke.Thickness :=5;
+     Canvas.FillRect (RectF(0, 100, 2000, 150), 0, 0, [], 1);
+     Canvas.DrawRect (RectF(0, 100, 2000, 150),  0, 0, [], 1);
+
+     Canvas.Fill.Color := TAlphaColors.green;
+     Canvas.Fill.Kind := TBRushKind.Solid;
+     Canvas.Stroke.Kind := TBrushKind.Solid;
+     Canvas.Stroke.Color := TAlphaColors.Blue;
+     Canvas.Stroke.Thickness :=5;
+     Canvas.FillRect (RectF(0, 200, 2000, 250), 0, 0, [], 1);
+     Canvas.DrawRect (RectF(0, 200, 2000, 250),  0, 0, [], 1);
+
+     Canvas.Fill.Color := TAlphaColors.Blue;
+     Canvas.Fill.Kind := TBRushKind.Solid;
+     Canvas.Stroke.Kind := TBrushKind.Solid;
+     Canvas.Stroke.Color := TAlphaColors.Yellow;
+     Canvas.Stroke.Thickness :=5;
+     Canvas.FillRect (RectF(0, 300, 2000, 350), 0, 0, [], 1);
+     Canvas.DrawRect (RectF(0, 300, 2000, 350),  0, 0, [], 1);
+
+     Canvas.Fill.Color := TAlphaColors.Yellow;
+     Canvas.Fill.Kind := TBRushKind.Solid;
+     Canvas.Stroke.Kind := TBrushKind.Solid;
+     Canvas.Stroke.Color := TAlphaColors.Red;
+     Canvas.Stroke.Thickness :=5;
+     Canvas.FillRect (RectF(0, 400, 2000, 450), 0, 0, [], 1);
+     Canvas.DrawRect (RectF(0, 400, 2000, 450),  0, 0, [], 1);
+     //Canvas.FillRect (RectF(300, 100, 1000, 1000), 0, 0, [], 1);
+    {Canvas.Fill.Color := TAlphaColors.Black;
+    Canvas.FillText(RectF(0,0,PBoxMain.Width - 20,90), Score.ToString,
+    False, 1, [], TTextAlign.Trailing);
+    Canvas.FillText(RectF(0,0,PBoxMain.Width - 20,70), 'Уровень ' +
+    Level.ToString, False, 1, [], TTextAlign.Center);}
+    Canvas.EndScene;
+
+end;
+
+end.

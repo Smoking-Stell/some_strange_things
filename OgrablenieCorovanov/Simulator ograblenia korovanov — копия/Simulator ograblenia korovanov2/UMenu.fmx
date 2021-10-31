@@ -1,0 +1,57 @@
+object FrMenu: TFrMenu
+  Size.Width = 688.000000000000000000
+  Size.Height = 591.000000000000000000
+  Size.PlatformDefault = False
+  object RectExit: TCircle
+    Align = Top
+    Fill.Color = xFFFD1919
+    Margins.Top = 20.000000000000000000
+    Position.Y = 195.000000000000000000
+    Size.Width = 688.000000000000000000
+    Size.Height = 318.000000000000000000
+    Size.PlatformDefault = False
+    OnClick = RectExitClick
+    object Text3: TText
+      Align = Center
+      HitTest = False
+      Size.Width = 688.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Big Red Button'
+      TextSettings.Font.Size = 40.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object RectPlay: TRoundRect
+    Align = Top
+    Fill.Color = xFFF9F11B
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 60.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 125.000000000000000000
+    Size.Width = 648.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    OnClick = RectPlayClick
+    object Text2: TText
+      Align = Center
+      HitTest = False
+      Size.Width = 500.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = ' PLAY'
+      TextSettings.Font.Size = 40.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object Text1: TText
+    Align = Top
+    Size.Width = 688.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    Text = #1057#1080#1084#1091#1083#1103#1090#1086#1088' '#1059#1082#1088#1072#1080#1085#1099
+    TextSettings.Font.Size = 30.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000200000004000000}
+  end
+end

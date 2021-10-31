@@ -1,0 +1,12 @@
+object FrGame: TFrGame
+  Size.Width = 684.000000000000000000
+  Size.Height = 592.000000000000000000
+  Size.PlatformDefault = False
+  object PaintBox1: TPaintBox
+    Align = Contents
+    Size.Width = 684.000000000000000000
+    Size.Height = 592.000000000000000000
+    Size.PlatformDefault = False
+    OnClick = PaintBox1Click
+  end
+end

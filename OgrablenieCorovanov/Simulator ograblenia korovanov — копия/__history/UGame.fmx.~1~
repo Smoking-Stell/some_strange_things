@@ -1,0 +1,5 @@
+object FrGame: TFrGame
+  Size.Width = 379.000000000000000000
+  Size.Height = 339.000000000000000000
+  Size.PlatformDefault = False
+end

@@ -1,0 +1,174 @@
+unit UMain;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects;
+
+type
+
+  THumanAnim = class
+  //количество строк
+    CountRow: Integer;
+  //количество кадров
+    CountFrame: Integer;
+  //Источник кадров
+    SourceBitmap: TBitmap;
+  //Текущий кадр
+    Index: Integer;
+  //Скорость воспроизведения
+    Duration: Single;
+    OldTime: Integer;
+    constructor Create (ACountRow, ACountFrame: Integer; ASourceBitmap: TBitmap;
+     Aduration: Single);
+    Destructor Destroy; override;
+    Function GeetCurrentFrame: TBitmap;
+  end;
+
+
+  TForm1 = class(TForm)
+    PaintBox1: TPaintBox;
+    Timer1: TTimer;
+    procedure PaintBox1Paint(Sender: TObject; Canvas: TCanvas);
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  HumanAnimated: THumanAnim;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm1.FormCreate(Sender: TObject);
+  var LStream: TResourceStream;
+      LBitmap: TBitmap;
+begin
+  LStream := TresourceStream.Create(HInstance, 'HumanRun', RT_RCDATA);
+  LBitmap := TBitmap.Create;
+  try
+      LBitmap.LoadFromStream(LStream);
+      HumanAnimated := THumanAnim.Create(4, 43, LBitmap, 1);
+  finally
+    LBitmap.Free;
+    LStream.Free;
+  end;
+end;
+
+procedure TForm1.PaintBox1Paint(Sender: TObject; Canvas: TCanvas);
+  var LRect: TRectF;
+      LPath: TPathData;
+      LStream: TResourceStream;
+      LRectSource, LRectDest: TRectF;
+      LBitmap: TBitmap;
+begin
+
+  LStream := TResourceStream.Create(HInstance,'HumanMain', RT_RCDATA);
+  LBitmap := TBitmap.Create;
+  LBitmap.LoadFromStream(LStream);
+  LRectSource := LBitmap.BoundsF;
+  LRectDest := RectF(200, 200, 310, 388);
+  LStream.Free;
+
+
+
+  // Путь графического объекта
+  LPath := TPathData.Create;
+  //LPath.Data := 'M 575, 250 L 515,270 L 535,250 L 515,230 L 575,250';
+  LPath.Data := 'M 500, 200 L 440,220 L 460,200 L 440,180 L 500,200';
+  LRect := RectF(100, 100, 200, 200);
+  Canvas.BeginScene();
+  //Цвет заливки
+     Canvas.Fill.Color := TAlphaColors.Blue;
+  //Тип заливки
+     Canvas.Fill.Kind := TBRushKind.Solid;
+  //Тип обводки
+     Canvas.Stroke.Kind := TBrushKind.Solid;
+     // Цвет обводки
+     Canvas.Stroke.Color := TAlphaColors.Yellow;
+     //Толщина обводки
+     Canvas.Stroke.Thickness :=5;
+     //  нарисовать квадрат
+     // Canvas.FillRect (LRect, 10, 10 [TCorner.Topleft, TCorner.TopRight], 1)
+     //Обвести объект
+     Canvas.FillPath(LPath, 1);
+     //Обвести объект
+     Canvas.DrawPath(LPath, 1);
+     //Нарисовать картинку
+     //Canvas.DrawBitmap(LBitmap, LRectSource, LRectDest, 1);
+     LBitmap.Assign(HumanAnimated.GeetCurrentFrame);
+     Canvas.DrawBitmap(LBitmap, LBitmap.BoundsF, RectF(500, 200, 500 + LBitmap.Width,
+                                                       200 + LBitmap.Height), 1);
+  Canvas.EndScene;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  PaintBox1.Repaint;
+end;
+
+{ THumanRun }
+
+constructor THumanAnim.Create(ACountRow, ACountFrame: Integer;
+  ASourceBitmap: TBitmap; Aduration: Single);
+begin
+  CountRow := ACountRow;
+  CountFrame := ACountFrame;
+  SourceBitmap := TBitmap.Create;
+  SourceBitmap.Assign(ASourceBitmap);
+  Index := 0;
+  OldTime := 0;
+end;
+
+destructor THumanAnim.Destroy;
+begin
+  SourceBitmap.Free;
+  SourceBitmap := nil;
+  inherited;
+end;
+
+function THumanAnim.GeetCurrentFrame: TBitmap;
+  var LCountFrameLine: Integer;
+      LHeight, LWidth: Single;
+      LWorkBitmap: TBitmap;
+      LNowTime: Integer;
+begin
+  LCountFrameLine := CountFrame div CountRow;
+  if CountFrame mod CountRow > 0 then inc(LCountFrameLine);
+
+  LHeight := SourceBitmap.Height / CountRow;
+  LWidth := SourceBitmap.Width / LCountFrameLine;
+
+  LWorkBitmap := TBitmap.Create;
+  LWorkBitmap.Width := Round(LWidth);
+  LWorkBitmap.Height := Round(LHeight);
+  LWorkBitmap.Canvas.BeginScene();
+  LWorkBitmap.Canvas.DrawBitmap(SourceBitmap,
+  RectF(( Index mod LCountFrameLine) * LWidth,
+          (Index div LCountFrameLine) * LHeight,
+          (Index mod LCountFrameLine) * LWidth + LWidth,
+          (Index div  LCountFrameLine) * LHeight + LHeight),
+          LWorkBitmap.BoundsF, 1);
+  LWorkBitmap.Canvas.EndScene;
+  Result := TBitmap.Create;
+  Result.Assign(LWorkBitmap);
+  LWorkBitmap.Free;
+
+  {LNowTime := Round(Now * 3600000);
+  if LNowTime - OldTime > Duration / CountFrame then
+    begin
+      OldTime := LNowTime;}
+      if Index + 1 = CountFrame then Index := 0
+        else inc(Index);
+   // end;
+end;
+
+end.
+

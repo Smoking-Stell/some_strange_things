@@ -1,0 +1,59 @@
+object FrGame: TFrGame
+  Size.Width = 684.000000000000000000
+  Size.Height = 592.000000000000000000
+  Size.PlatformDefault = False
+  object PBox: TPaintBox
+    Align = Contents
+    Size.Width = 684.000000000000000000
+    Size.Height = 592.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseDown = PBoxMouseDown
+    OnPaint = PBoxPaint
+    object Text1: TText
+      Align = Top
+      Size.Width = 684.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TextSettings.HorzAlign = Leading
+      object Pause: TSpeedButton
+        Align = Right
+        Position.X = 584.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'pausetoolbutton'
+        Text = 'Pause'
+        OnClick = PauseClick
+      end
+      object Back: TSpeedButton
+        Align = Right
+        Position.X = 632.000000000000000000
+        Size.Width = 52.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'priortoolbutton'
+        Text = 'Pause'
+        OnClick = BackClick
+      end
+      object Play: TSpeedButton
+        Align = Right
+        Position.X = 535.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'playtoolbutton'
+        Text = 'Play'
+        OnClick = PlayClick
+      end
+    end
+  end
+  object TimMain: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimMainTimer
+    Left = 600
+    Top = 88
+  end
+end

@@ -1,0 +1,38 @@
+unit UKyst;
+
+interface
+  uses System.UITypes, System.Types, System.Generics.Collections;
+
+  type
+
+    TKyst = class
+      Pos: Integer;
+      PosK: Integer;
+      Road: Integer;
+      HP: Integer;
+      Constructor Create (APos, ARoad: Integer);
+    end;
+
+    TKysts = class (TObjectList<TKyst>)
+      procedure NewKyst(APos, ARoad: Integer);
+    end;
+implementation
+
+{ TKysts }
+
+procedure TKysts.NewKyst(APos, Aroad: Integer);
+begin
+  Add(TKyst.Create(APos, ARoad));
+end;
+
+{ TKyst }
+
+constructor TKyst.Create(APos, ARoad: Integer);
+begin
+  Pos := APos;
+  PosK := APos + 50;
+  HP := 3;
+  Road := ARoad;
+end;
+
+end.

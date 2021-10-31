@@ -1,0 +1,69 @@
+unit UMenu;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, UMain, FMX.Objects;
+
+type
+  TFrMenu = class(TFrame)
+    PaintBox1: TPaintBox;
+    Text1: TText;
+    Play: TRoundRect;
+    Exit: TCircle;
+    procedure ExitClick(Sender: TObject);
+    procedure PlayClick(Sender: TObject);
+    procedure PlayPaint(Sender: TObject; Canvas: TCanvas; const ARect: TRectF);
+    procedure ExitPaint(Sender: TObject; Canvas: TCanvas; const ARect: TRectF);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+uses UGame;
+
+{$R *.fmx}
+
+procedure TFrMenu.ExitClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TFrMenu.ExitPaint(Sender: TObject; Canvas: TCanvas;
+  const ARect: TRectF);
+begin
+  Canvas.Font.Family := 'Arial';
+  Canvas.Font.Size := 40;
+  Canvas.Font.Style := [TFontStyle.fsBold];
+  Canvas.BeginScene();
+  Canvas.Fill.Color := TAlphaColors.Black;
+  Canvas.FillText(RectF(250, 60, 400, 130),'Big Red',
+    False, 1, [], TTextAlign.Trailing);
+  Canvas.FillText(RectF(250, 90, 400, 160),'Button',
+    False, 1, [], TTextAlign.Trailing);
+  Canvas.EndScene;
+end;
+
+procedure TFrMenu.PlayClick(Sender: TObject);
+begin
+  SetFrame (TFrGame);
+end;
+
+procedure TFrMenu.PlayPaint(Sender: TObject; Canvas: TCanvas;
+  const ARect: TRectF);
+begin
+  Canvas.Font.Family := 'Arial';
+  Canvas.Font.Size := 40;
+  Canvas.Font.Style := [TFontStyle.fsBold];
+  Canvas.BeginScene();
+  Canvas.Fill.Color := TAlphaColors.Black;
+  Canvas.FillText(RectF(240, 0, 340, 50),'Play',
+    False, 1, [], TTextAlign.Trailing);
+  Canvas.EndScene;
+end;
+
+end.

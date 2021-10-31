@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{04E4A68F-09D0-4F0D-B508-1478298B3BAB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\ProjectTrain.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ProjectGame.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjectTrain">
+        <MSBuild Projects="..\ProjectTrain.dproj"/>
+    </Target>
+    <Target Name="ProjectTrain:Clean">
+        <MSBuild Projects="..\ProjectTrain.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjectTrain:Make">
+        <MSBuild Projects="..\ProjectTrain.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjectGame">
+        <MSBuild Projects="ProjectGame.dproj"/>
+    </Target>
+    <Target Name="ProjectGame:Clean">
+        <MSBuild Projects="ProjectGame.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjectGame:Make">
+        <MSBuild Projects="ProjectGame.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjectTrain;ProjectGame"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjectTrain:Clean;ProjectGame:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjectTrain:Make;ProjectGame:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
